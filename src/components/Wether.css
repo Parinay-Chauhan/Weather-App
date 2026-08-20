@@ -3,7 +3,8 @@
     width: min(92vw, 540px);
     padding: clamp(24px, 4vw, 40px);
     border-radius: 20px;
-    background-image: linear-gradient(45deg, #2f4680, #500ae4);
+    /* background-image: linear-gradient(45deg, #2f4680, #500ae4); */
+    background-image: linear-gradient(45deg, #4070ea, #8553ef);
     box-shadow: 0 20px 60px rgba(47, 70, 128, 0.25);
     display: flex;
     flex-direction: column;
@@ -26,7 +27,8 @@
     border-radius: 999px;
     padding: 0 22px;
     color: #626262;
-    background: #ebfffc;
+    /* background: #ebfffc; */
+    background: #f7fafa;
     font-size: 18px;
 }
 
@@ -34,7 +36,8 @@
     width: 50px;
     padding: 15px;
     border-radius: 50%;
-    background: #ebfffc;
+    /* background: #ebfffc; */
+    background: #ffffff;
     cursor: pointer;
 }
 
