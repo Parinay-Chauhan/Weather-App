@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useQuery } from '@tanstack/react-query'
 import './Wether.css'
 import search_icon from "../assets/search.png"
 import clear_icon from "../assets/clear.png"
@@ -43,7 +44,7 @@ const Wether = () => {
             const response = await fetch(url);
             const data = await response.json();
 
-            if(!response.ok){
+            if (!response.ok) {
                 alert(data.message);
                 return;
             }
@@ -62,6 +63,18 @@ const Wether = () => {
             console.error("Error in Featching Data");
 
         }
+    }
+
+    function WeatherApp() {
+        const { data, isLoading } = useQuery({
+            queryKey: ['weather'],
+            queryFn: search,
+            refetchInterval: 300000, // Har 5 minute me auto-poll karega
+        });
+
+        if (isLoading) return <p>Loading...</p>;
+
+        return <h2>Temp: {data?.main?.temp}°C</h2>;
     }
 
     useEffect(() => {
