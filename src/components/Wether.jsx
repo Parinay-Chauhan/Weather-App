@@ -60,7 +60,7 @@ const Wether = () => {
         queryKey: ['weather', city],
         queryFn: () => fetchWeather(city),
         enabled: Boolean(city.trim()),
-        refetchInterval: 300000,
+        refetchInterval: 1000,
         refetchIntervalInBackground: true,
         staleTime: 300000,
         retry: 1,
